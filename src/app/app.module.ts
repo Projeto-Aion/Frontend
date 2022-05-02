@@ -14,10 +14,10 @@ import { QuemSomosComponent } from './quem-somos/quem-somos.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    CadastrarComponent
+    CadastrarComponent,
     MenuComponent,
-    RodapeComponent
-    QuemSomosComponent
+    RodapeComponent,
+    QuemSomosComponent,
   ],
   imports: [
     BrowserModule,

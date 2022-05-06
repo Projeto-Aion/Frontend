@@ -17,7 +17,11 @@ export class AuthService {
 
   cadastrar(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('https://projeto-aion.herokuapp.com/usuarios/cadastrar', usuario)
-  } 
+  }
+
+  logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
+    return this.http.post<Usuario>('https://projeto-aion.herokuapp.com/usuarios/logar', usuarioLogin)
+  }
 
 }
 

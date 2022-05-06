@@ -12,6 +12,10 @@ import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { InicioComponent } from './inicio/inicio.component';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +25,13 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     RodapeComponent,
     QuemSomosComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

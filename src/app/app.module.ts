@@ -11,6 +11,7 @@ import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     RodapeComponent,
     QuemSomosComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,9 @@ import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { InicioComponent } from './inicio/inicio.component';
+import { TemaComponent } from './tema/tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { InicioComponent } from './inicio/inicio.component';
     RodapeComponent,
     QuemSomosComponent,
     InicioComponent,
+    TemaComponent,
+    TemaEditComponent,
+    TemaDeleteComponent,
   ],
   imports: [
     BrowserModule,

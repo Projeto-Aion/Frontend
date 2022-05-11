@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   getByIdUser(id: number): Observable<Usuario> {
-    return this.http.get<Usuario>(`http://localhost:8080/usuarios/${id}`)
+    return this.http.get<Usuario>(`https://projeto-aion.herokuapp.com/usuarios/${id}`)
   }
 
   logado() {

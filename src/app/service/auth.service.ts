@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';;
 import { UsuarioLogin } from '../model/UsuarioLogin';
@@ -14,6 +14,16 @@ export class AuthService {
   constructor(
     private http: HttpClient
   ) { }
+
+  token ={
+    headers: new HttpHeaders().set('Authorization', environment.token),
+  };
+
+  refreshToken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
+  }
 
   cadastrar(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('https://projeto-aion.herokuapp.com/usuarios/cadastrar', usuario)

@@ -6,5 +6,6 @@ export const environment = {
     token:'',
     telefone: '',
     usuario: '',
-    foto: ''
+    foto: '',
+    tipo: ''
   };

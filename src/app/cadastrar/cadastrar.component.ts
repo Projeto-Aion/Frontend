@@ -21,8 +21,6 @@ tipoUsuario: string
 
   ngOnInit() {
 window.scroll (0,0)
-
-
   }
 
   confirmSenha(event: any) {

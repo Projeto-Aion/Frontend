@@ -19,9 +19,15 @@
                 <a href="">
                     <p class="text-white fs-16 m-0"><i class="fa fa-home" aria-hidden="true"></i></p>
                 </a>
+                <a class="nav-link fs-16 text-white" style="font-family:sans-serif" href="#">home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item pl-3"> <!--botão editar-->
+              <a [routerLink]="['/usuario-edit', id]">
+                <p class="text-white font-size-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p> <!--add icone editar-->
+              </a>
             </li>
         </ul>
 
@@ -31,6 +37,21 @@
                 <a href="">
                     <p class="text-white fs-16 mr-3"><i class="fa fa-search align-items-center" aria-hidden="true"></i></p>
                 </a>
+
+                <div class="form-group">
+                    <span class="fa fa-search form-control-icon"></span>
+                      <input
+                      placeholder="Pesquisar"
+                      class="form-control"
+                      type="text"
+                      name="pesquisa"
+                      id="pesquisa"
+                    />
+                  </div>
+
+            </li>
+            <li class="nav-item pl-3 ml-auto list-inline-item d-flex align-items-center">
+                <a (click)='sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
 
                 <form class="form-inline my-2 my-lg-0 d-flex list-inline-item">
                     <input class="form-control mr-sm-2" type="pesquisa" placeholder="Pesquisa" aria-label="Pesquisa">

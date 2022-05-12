@@ -5,6 +5,7 @@ import { Postagem } from '../model/Postagem';
 import { PostagemService } from '../service/postagem.service';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { AlertasService } from '../service/alertas.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class InicioComponent implements OnInit {
   constructor(
     private router: Router,
     private postagemService: PostagemService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService // Injetando a dependência alertas.service.ts para poder utilizar a estilização do alerta
   ) { }
 
   ngOnInit() {

@@ -17,6 +17,7 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PerfilPadraoComponent } from './perfil-padrao/perfil-padrao.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { AlertaComponent } from './alerta/alerta.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     TemaDeleteComponent,
     PerfilPadraoComponent,
     UsuarioEditComponent,
+    AlertaComponent,
   ],
   imports: [
     BrowserModule,

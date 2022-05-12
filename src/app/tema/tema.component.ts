@@ -34,6 +34,7 @@ export class TemaComponent implements OnInit {
     })
   }
 
+
   tCadastrar(){
     this.tService.postTema(this.tema).subscribe((resp: Tema) =>{
       this.tema = resp

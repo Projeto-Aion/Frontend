@@ -30,9 +30,9 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
 
     if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/login'])
     }
-
+    this.authService.refreshToken()
     this.getAllPostagens()
   }
 

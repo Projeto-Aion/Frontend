@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -16,7 +17,8 @@ tipoUsuario: string
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
     ) { }
 
   ngOnInit() {
@@ -35,12 +37,12 @@ window.scroll (0,0)
     this.user.tipo = this.tipoUsuario
 
   if (this.user.senha != this.confirmarSenha) {
-    alert('As senhas não coincidem.')
+    this.alertas.showAlertDanger('As senhas não coincidem.')
     } else {
     this.authService.cadastrar(this.user).subscribe((resp: Usuario) => {
-      this.user = resp
-      this.router.navigate(['/login'])
-    alert('Usuário cadastrado com sucesso')
+    this.user = resp
+    this.router.navigate(['/login'])
+    this.alertas.showAlertSuccess('Usuário cadastrado com sucesso')
     })
     }
   }

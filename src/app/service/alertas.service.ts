@@ -1,3 +1,4 @@
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Injectable } from '@angular/core';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal'
 import { AlertaComponent } from '../alerta/alerta.component';
@@ -22,8 +23,8 @@ export class AlertasService {
     this.showAlert(message, 'danger')
   }
 
-  showAlertSuccess(msg:string){
-    this.showAlert(msg, 'success')
+  showAlertSuccess(message:string){
+    this.showAlert(message, 'success')
   }
 
   showAlertInfo(message: string){

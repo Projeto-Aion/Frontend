@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { PostagemService } from '../service/postagem.service';
@@ -20,20 +20,19 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+ 
   user: Usuario = new Usuario()
   idUser = environment.id
+ 
   tema: Tema = new Tema ()
   listTema: Tema []
   idTema: number
-  idPostagem: number
 
 
   constructor(
     private router: Router,
-    private postagemService: PostagemService,
     private authService: AuthService,
     private alertas: AlertasService, // Injetando a dependência alertas.service.ts para poder utilizar a estilização do alerta
-    private route: ActivatedRoute,
     private pService: PostagemService,
     private tService: TemaService
   ) { }
@@ -44,19 +43,15 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.authService.refreshToken()
+    this.getAllTemas()
     this.getAllPostagens()
-
-    if(environment.token == ''){
-      // alert('Sua sessão expirou, faça o login novamente')
-      this.router.navigate(['/login'])
-    }
-    this.tService.refreshToken()
-
   }
 
-  getAllPostagens() {
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
+  
+
+  getAllTemas() {
+    this.tService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listTema = resp
     })
   }
 
@@ -77,6 +72,12 @@ export class InicioComponent implements OnInit {
       this.listTema = resp
     })
   }
+  
+  getAllPostagens() {
+    this.pService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+  }
 
   publicar(){
     this.tema.id = this.idTema // o postagem.tema recebe o  idTema que vem do ngMOdel
@@ -85,7 +86,7 @@ export class InicioComponent implements OnInit {
     this.user.id = this.idUser // pegando o id do user que está logado
     this.postagem.usuario = this.user // peguei o usuário certo em cima e passo para a postagem
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
+    this.pService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!') // PARA IMPLEMENTAR O ALERTA É SÓ ADICIONAR ESTA LINHA
       this.postagem = new Postagem() //limpa os campos do modal

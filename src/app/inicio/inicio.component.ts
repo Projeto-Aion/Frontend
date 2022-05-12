@@ -5,6 +5,7 @@ import { Postagem } from '../model/Postagem';
 import { PostagemService } from '../service/postagem.service';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { AlertasService } from '../service/alertas.service';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 
@@ -31,6 +32,7 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private authService: AuthService,
+    private alertas: AlertasService // Injetando a dependência alertas.service.ts para poder utilizar a estilização do alerta
     private route: ActivatedRoute,
     private pService: PostagemService,
     private tService: TemaService

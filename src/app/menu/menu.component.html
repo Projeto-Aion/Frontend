@@ -12,16 +12,16 @@
             </li>
 
             <li class="nav-item pl-3">
-
-                <p class="m-0 font-weight-bold text-white fs-16" style="font-family:sans-serif" >{{nome}}</p>
+                <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}</p>
             </li>
 
-            <li class="nav-item list pl-3 ml-3 d-flex align-items-center">
+            <li class="nav-item pl-3 ml-3">
                 <a href="">
                     <p class="text-white fs-16 m-0"><i class="fa fa-home" aria-hidden="true"></i></p>
                 </a>
-            
-                <a class="nav-link fs-16 text-white" style="font-family:sans-serif" href="#">home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
             </li>
         </ul>
 
@@ -29,29 +29,21 @@
         <ul class="navbar-nav  list-inline">
             <li class="nav-item mr-auto pl-3 list-unstyled list-inline-item">
                 <a href="">
-                    <p class="text-white fs-16 mr-3"></p>
+                    <p class="text-white fs-16 mr-3"><i class="fa fa-search align-items-center" aria-hidden="true"></i></p>
                 </a>
 
-                <div class="form-group">
-                    <span class="fa fa-search form-control-icon"></span>
-                      <input
-                      placeholder="Pesquisar"
-                      class="form-control"
-                      type="text"
-                      name="usuario"
-                      id="usuario"
-                    />
-                  </div>
-                  
+                <form class="form-inline my-2 my-lg-0 d-flex list-inline-item">
+                    <input class="form-control mr-sm-2" type="pesquisa" placeholder="Pesquisa" aria-label="Pesquisa">
+                </form>
             </li>
 
-
-            <li class="nav-item pl-3 ml-auto list-inline-item d-flex align-items-center"> 
+            <li class="nav-item pl-3 ml-auto list-inline-item">
                 <a (click)='sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out"
-
                         aria-hidden="true"></i></a>
             </li>
         </ul>
 
     </div>
 </nav>
+
+

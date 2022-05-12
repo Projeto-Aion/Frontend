@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
-import { Tema } from 'src/app/model/Tema';
+
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -14,10 +14,6 @@ export class PostagemDeleteComponent implements OnInit {
 
   idPostagem: number
   postagem: Postagem = new Postagem ()
-  tema: Tema = new Tema ()
-  listTema: Tema []
-  idTema: number
-
 
   constructor(
 
@@ -28,10 +24,12 @@ export class PostagemDeleteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
+
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
-  this.pService.refreshToken()
+
   this.idPostagem = this.route.snapshot.params['id']
   this.findByIdPostagem(this.idPostagem)
 
@@ -46,6 +44,7 @@ export class PostagemDeleteComponent implements OnInit {
   delete(){
     this.pService.deletePostagem(this.idPostagem).subscribe(() => {
       alert('Deletado!')
+      this.router.navigate(['/inicio'])
     })
   }
 

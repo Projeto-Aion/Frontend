@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { TemaComponent } from './tema/tema.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'login', pathMatch:'full'},
@@ -24,6 +26,9 @@ const routes: Routes = [
   {path:'inicio', component: InicioComponent},
   {path:'temaEdit/:id', component: TemaEditComponent},
   {path:'temaDelete/:id', component: TemaDeleteComponent},
+  {path:'postagemDelete/:id', component: PostagemDeleteComponent},
+  {path:'postagemEdit/:id', component: PostagemEditComponent},
+
 
 ];
 

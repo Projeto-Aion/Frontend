@@ -19,6 +19,9 @@ import { PerfilPadraoComponent } from './perfil-padrao/perfil-padrao.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertaComponent } from './alerta/alerta.component';
 
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { AlertaComponent } from './alerta/alerta.component';
     PerfilPadraoComponent,
     UsuarioEditComponent,
     AlertaComponent,
+    PostagemEditComponent,
+    PostagemDeleteComponent
   ],
   imports: [
     BrowserModule,

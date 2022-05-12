@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { PostagemService } from '../service/postagem.service';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { AlertasService } from '../service/alertas.service';
+import { Tema } from '../model/Tema';
+import { TemaService } from '../service/tema.service';
 
 
 @Component({
@@ -18,15 +20,22 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
-
   user: Usuario = new Usuario()
   idUser = environment.id
+  tema: Tema = new Tema ()
+  listTema: Tema []
+  idTema: number
+  idPostagem: number
+
 
   constructor(
     private router: Router,
     private postagemService: PostagemService,
     private authService: AuthService,
     private alertas: AlertasService // Injetando a dependência alertas.service.ts para poder utilizar a estilização do alerta
+    private route: ActivatedRoute,
+    private pService: PostagemService,
+    private tService: TemaService
   ) { }
 
   ngOnInit() {
@@ -49,5 +58,18 @@ export class InicioComponent implements OnInit {
       this.user = resp
     })
   }
+
+  findByIdTema(){
+    this.tService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
+      this.tema = resp
+    })
+  }
+
+  findAllTema() {
+    this.tService.getAllTema().subscribe((resp: Tema[])=>{
+      this.listTema = resp
+    })
+  }
+
 
 }

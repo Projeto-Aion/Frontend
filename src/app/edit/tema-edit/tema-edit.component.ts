@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 export class TemaEditComponent implements OnInit {
 
   tema: Tema = new Tema()
+  idTema: number
 
   constructor(
     private router: Router,
@@ -42,4 +43,13 @@ export class TemaEditComponent implements OnInit {
       this.router.navigate(['/tema'])
     })
   }
+
+  atualizar() {
+    this.tService.putTema(this.tema).subscribe((resp: Tema)=>{
+      this.tema = resp
+      alert('Tema atualizado com sucesso!')
+      this.router.navigate(['/tema']) //fazer um clicavel no html****
+    })
+  }
+
 }

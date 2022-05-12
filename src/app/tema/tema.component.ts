@@ -19,12 +19,11 @@ export class TemaComponent implements OnInit {
     private tService: TemaService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     if(environment.token == ''){
       // alert('Sua sessão expirou, faça o login novamente')
       this.router.navigate(['/login'])
     }
-
     this.tService.refreshToken()
     this.findAllTema()
   }

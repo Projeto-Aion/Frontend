@@ -5,6 +5,7 @@ import { Postagem } from '../model/Postagem';
 import { PostagemService } from '../service/postagem.service';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { TemaService } from '../service/tema.service';
 
 
 @Component({
@@ -24,16 +25,16 @@ export class InicioComponent implements OnInit {
   constructor(
     private router: Router,
     private postagemService: PostagemService,
-    private authService: AuthService
+    private authService: AuthService,
+    private tService: TemaService
   ) { }
 
   ngOnInit() {
-
-    if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
-      this.router.navigate(['/entrar'])
+    if(environment.token == ''){
+      // alert('Sua sessão expirou, faça o login novamente')
+      this.router.navigate(['/login'])
     }
-
-    this.getAllPostagens()
+    this.tService.refreshToken()
   }
 
   getAllPostagens() {

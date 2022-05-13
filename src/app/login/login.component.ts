@@ -42,7 +42,10 @@ logar() {
       environment.id = this.usuarioLogin.id
       environment.tipo = this.usuarioLogin.tipo
 
-      this.router.navigate(['/inicio'])},
+
+
+      this.router.navigate(['/inicio'])
+    }, 
     error: (error) => {
       if (error.status == 401) {
         alert('Usuário e/ou senha inválidos');

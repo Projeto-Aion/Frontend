@@ -21,6 +21,7 @@ import { AlertaComponent } from './alerta/alerta.component';
 import { PerfilCorporativoComponent } from './perfil-corporativo/perfil-corporativo.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -51,7 +52,10 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     FormsModule,
     ModalModule.forRoot() // Para funcionamento do alerta
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

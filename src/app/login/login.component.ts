@@ -43,6 +43,7 @@ logar() {
       environment.tipo = this.usuarioLogin.tipo
 
 
+
       this.router.navigate(['/inicio'])
     }, 
     error: (error) => {

@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'quemsomos', component: QuemSomosComponent},
 
   {path: 'inicio', component: InicioComponent},
-  {path: 'usuario-edit/:id', component: UsuarioEditComponent}
+  {path: 'usuario-edit/:id', component: UsuarioEditComponent},
 
   {path:'tema', component: TemaComponent},
   {path:'inicio', component: InicioComponent},

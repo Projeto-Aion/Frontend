@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'cadastrar', component: CadastrarComponent},
   {path: 'inicio', component: InicioComponent},
   {path:'rodape', component: RodapeComponent},
-  {path:'quem-somos', component: QuemSomosComponent}
+  {path:'quem-somos', component: QuemSomosComponent},
 
   {path: 'inicio', component: InicioComponent},
   {path: 'usuario-edit/:id', component: UsuarioEditComponent},

@@ -89,5 +89,8 @@ export class InicioComponent implements OnInit {
 
   }
 
+  quemsomos() {
+    this.router.navigate(['/quem-somos'])
+}
 
 }

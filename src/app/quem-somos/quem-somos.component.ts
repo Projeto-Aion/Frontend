@@ -17,6 +17,7 @@ export class QuemSomosComponent implements OnInit {
     if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
       this.router.navigate(['/login'])
     }
+
   }
 
 }

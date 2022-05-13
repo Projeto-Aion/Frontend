@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -22,6 +23,7 @@ import { AlertaComponent } from './alerta/alerta.component';
 import { PerfilCorporativoComponent } from './perfil-corporativo/perfil-corporativo.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+
 
 
 
@@ -51,7 +53,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot() // Para funcionamento do alerta
+    ModalModule.forRoot(), // Para funcionamento do alerta
+    OrderModule //Ordernação - order-by
   ],
   providers: [{
     provide: LocationStrategy,

@@ -28,6 +28,9 @@ export class InicioComponent implements OnInit {
   listTema: Tema []
   idTema: number
 
+  key = 'data' // criação de variáveis (key e reverse) para ordenação das postagens
+  reserve = true // do último para o primeiro
+
 
   constructor(
     private router: Router,

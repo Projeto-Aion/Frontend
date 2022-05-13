@@ -19,6 +19,7 @@ export class PostagemEditComponent implements OnInit {
   idTema: number
   idPostagem: number
 
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -68,3 +69,5 @@ export class PostagemEditComponent implements OnInit {
   }
 
 }
+
+

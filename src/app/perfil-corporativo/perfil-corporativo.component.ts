@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-quem-somos',
-  templateUrl: './quem-somos.component.html',
-  styleUrls: ['./quem-somos.component.css']
+  selector: 'app-perfil-corporativo',
+  templateUrl: './perfil-corporativo.component.html',
+  styleUrls: ['./perfil-corporativo.component.css']
 })
-export class QuemSomosComponent implements OnInit {
+export class PerfilCorporativoComponent implements OnInit {
 
   constructor(
     private router: Router
@@ -17,7 +17,6 @@ export class QuemSomosComponent implements OnInit {
     if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
       this.router.navigate(['/login'])
     }
-
   }
 
 }

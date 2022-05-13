@@ -28,7 +28,7 @@ getAllPostagens(): Observable<Postagem[]> {
 }
 
 getByIdPostagem(id: number): Observable<Postagem> {
-  return this.http.post<Postagem>(`https://projeto-aion.herokuapp.com/postagens/${id}`, this.token)
+  return this.http.get<Postagem>(`https://projeto-aion.herokuapp.com/postagens/${id}`, this.token)
 }
 
 postPostagem(postagem: Postagem): Observable<Postagem> {

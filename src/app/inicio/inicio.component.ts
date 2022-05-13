@@ -20,6 +20,7 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPost: string
 
   user: Usuario = new Usuario()
   idUser = environment.id
@@ -27,6 +28,7 @@ export class InicioComponent implements OnInit {
   tema: Tema = new Tema ()
   listTema: Tema []
   idTema: number
+  nomeTema: string
 
 
   constructor(
@@ -89,5 +91,25 @@ export class InicioComponent implements OnInit {
 
   }
 
+
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    } else {
+      this.pService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
+
+  findByNomeTema(){
+    if(this.nomeTema == ''){
+      this.getAllTemas()
+    } else {
+      this.tService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
+        this.listTema = resp
+      })
+    }
+  }
 
 }

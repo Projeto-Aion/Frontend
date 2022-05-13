@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
@@ -19,7 +20,8 @@ export class PostagemDeleteComponent implements OnInit {
 
     private pService: PostagemService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
 
   ) { }
 
@@ -43,7 +45,7 @@ export class PostagemDeleteComponent implements OnInit {
 
   delete(){
     this.pService.deletePostagem(this.idPostagem).subscribe(() => {
-      alert('Deletado!')
+      this.alertas.showAlertDanger('Deletado!')
       this.router.navigate(['/inicio'])
     })
   }

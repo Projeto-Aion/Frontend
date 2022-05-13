@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -21,7 +22,7 @@ import { AlertaComponent } from './alerta/alerta.component';
 import { PerfilCorporativoComponent } from './perfil-corporativo/perfil-corporativo.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 
 

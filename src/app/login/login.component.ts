@@ -45,10 +45,10 @@ logar() {
 
 
       this.router.navigate(['/inicio'])
-    }, 
+    },
     error: (error) => {
       if (error.status == 401) {
-        alert('Usuário e/ou senha inválidos');
+        this.alertas.showAlertDanger('Usuário e/ou senha inválidos');
 
       }
     },

@@ -10,9 +10,9 @@ import { environment } from 'src/environments/environment.prod';
   templateUrl: './usuario-edit.component.html',
   styleUrls: ['./usuario-edit.component.css']
 })
-export class UsuarioEditComponent implements OnInit {
+export class UserEditComponent implements OnInit {
 
-  user: Usuario= new Usuario
+  user: Usuario= new Usuario()
   idUser:number
   confirmaSenha: string
   tipoUsuario:string
@@ -27,6 +27,7 @@ export class UsuarioEditComponent implements OnInit {
   ngOnInit() {
 
     window.scroll(0,0)
+
     if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
       this.router.navigate(['/login'])
     }
@@ -44,15 +45,16 @@ export class UsuarioEditComponent implements OnInit {
 
   }
 
-  atualizar(){
+  atualizarUser(){
     this.user.tipo =this.tipoUsuario // pegar o tipo de usuário (user.tipo) e colocar dentro da variável tipoUsuário
 
     if(this.user.senha != this.confirmaSenha){ //Comparação de senhas
       this.alertas.showAlertDanger('As senhas estão incorretas.')
     } else{
-      this.authService.cadastrar(this.user).subscribe((resp: Usuario) => {
+      this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
         this.user = resp
-        this.router.navigate(['/inicio'])
+        
+        /*this.router.navigate(['/inicio'])*/
         this.alertas.showAlertSuccess('Usuário atualizado com sucesso, faça o login novamente')
         environment.token = ''
         environment.nome = ''

@@ -5,6 +5,16 @@
     </div>
 </div>
 
+    <!-- barra de titulo de postagem -->
+    <div class="row d-flex justify-content-center mt-5 mb-5">
+        <div class="col-md-4">
+        <div class="form-group">
+            <input type="text" class="form-control" id="titulo" placeholder="Digite um titulo de postagem para pesquisar" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+        </div>
+        </div>
+    </div>
+    <!-- Fim da barra de titulo de postagem -->
+
     <!-- H1 e botões de ver e fazer nova postagem -->
     <div class="m-3 row d-flex flex-column align-items-start justify-content-start publicacoes">
         <h1 class="m-3 py-3 font-weight-bold">Publicações</h1>

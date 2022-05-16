@@ -30,6 +30,7 @@ export class InicioComponent implements OnInit {
   idTema: number
   nomeTema: string
 
+  nome = environment.nome
 
   constructor(
     private router: Router,

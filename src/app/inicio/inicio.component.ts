@@ -35,7 +35,6 @@ export class InicioComponent implements OnInit {
   nome = environment.nome
   foto = environment.foto// do último para o primeiro
 
-
   constructor(
     private router: Router,
     private authService: AuthService,

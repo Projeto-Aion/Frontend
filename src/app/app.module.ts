@@ -18,11 +18,12 @@ import { TemaComponent } from './tema/tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PerfilPadraoComponent } from './perfil-padrao/perfil-padrao.component';
-import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { UserEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertaComponent } from './alerta/alerta.component';
 import { PerfilCorporativoComponent } from './perfil-corporativo/perfil-corporativo.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+
 
 
 
@@ -41,7 +42,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     TemaDeleteComponent,
 
     PerfilPadraoComponent,
-    UsuarioEditComponent,
+    UserEditComponent,
     AlertaComponent,
     PerfilCorporativoComponent,
     PostagemEditComponent,
@@ -51,9 +52,9 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    ModalModule.forRoot(),
-    OrderModule, // Para funcionamento do alerta
+    FormsModule, // Para funcionamento do alerta
+    ModalModule.forRoot(), // Para funcionamento do alerta
+    OrderModule, //Ordernação - order-by
   ],
   providers: [{
     provide: LocationStrategy,

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { UserEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -16,11 +16,12 @@ const routes: Routes = [
   {path:'', redirectTo: 'login', pathMatch:'full'},
   {path:'login', component: LoginComponent},
   {path:'cadastrar', component: CadastrarComponent},
+  {path: 'inicio', component: InicioComponent},
   {path:'rodape', component: RodapeComponent},
-  {path:'quemsomos', component: QuemSomosComponent},
+  {path:'quem-somos', component: QuemSomosComponent},
 
   {path: 'inicio', component: InicioComponent},
-  {path: 'usuario-edit/:id', component: UsuarioEditComponent},
+  {path: 'usuario-edit/:id', component: UserEditComponent},
 
   {path:'tema', component: TemaComponent},
   {path:'inicio', component: InicioComponent},
@@ -28,8 +29,6 @@ const routes: Routes = [
   {path:'temaDelete/:id', component: TemaDeleteComponent},
   {path:'postagemDelete/:id', component: PostagemDeleteComponent},
   {path:'postagemEdit/:id', component: PostagemEditComponent},
-
-
 ];
 
 @NgModule({

@@ -37,10 +37,24 @@ export class AuthService {
     return this.http.get<Usuario>(`https://projeto-aion.herokuapp.com/usuarios/${id}`, this.token)
   }
 
+  atualizar(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>('https://projeto-aion.herokuapp.com/usuarios/atualizar', usuario, this.token)
+  }
+
   logado() {
     let ok: boolean = false
 
     if(environment.token != '') {
+      ok = true
+    }
+
+    return ok
+  }
+
+  corporativo(){
+    let ok: boolean = false
+
+    if(environment.tipo == 'adm') {
       ok = true
     }
 

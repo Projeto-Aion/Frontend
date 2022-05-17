@@ -1,46 +1,34 @@
-<div class="row">
+ <div class="fundo" style="margin: 0; padding: 0; /*background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);*/">
 
-  <!--sidebar-->
-  <div class="col-md-4">
-     <div class="side-bar">
-          <a class="titleSidebar"><h1>Menu Aion</h1></a>
-          <br>
-          <div class="list-container">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <a class="nav-link active bg-dark text-white" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"  routerLink='/login'>Home</a>
-                  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Sobre Nós</a>
-                  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Relatórios Anuais</a>
-                </div>
-          </div>
+ <div class="row mt-4" style="margin-left: 15%;">
+    <div class="col-md-5 d-flex flex-column justify-content-center" style="border-right: 1px solid rgb(197, 189, 189); margin-right: 2px">
+      <span class="display-4 text-center bg-text font-weight-bolder">Quem somos</span><br>
+      <p class="text-center">What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+      <div class="d-flex justify-content-around">
+        <button class="btn btn-outline-light px-5" data-toggle="modal" data-target="#novaPostagemModal">Nova Postagem</button>
       </div>
+
+    </div>
+
+    <!-- ------------------------ CANTO SUPERIOR DIREITO ------------------------ -->
+
+    <div class="col-md-6">
+      <img height="100%" width="70%" src="../../assets/img/quem-somos-aion.jpg" alt="imagem de fundo" class="img-fluid">
+    </div>
+
 </div>
-  <!--/sidebar-->
-  <!--texto-->
-  <div class="col-md-4">
-    <div id="texto" >
-     <p >
 
-        What is Lorem Ipsum?
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-     </p>
-    </div>
-  </div>
-  <!--/texto-->
-  <div class="col-md-4">
-    <div id="imagemLateral">
-     <img width="100%" height="100%" src="../../assets/img/quem-somos-aion.jpg" alt="Imagem Quem Somos Aion">
-    </div>
-  </div>
-<!--/container-->
+<!-- ------------------------ Cards ------------------------ -->
 
-<!--Card-->
 
-  <h2>Sobre Nós</h2>
+  <h2 class="text-center font-weight-bolder">Sobre nós</h2>
 
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col mb-4 ">
-      <div class="card" style="border: 2px solid rgb(47, 131, 64);">
-        <img width="100%" height="100%" src="../../assets/img/missao.jpg" class="card-img-top" alt="...">
+      <div class="card" style="border-radius: 20px;">
+        <img width="100%" height="100%" src="../../assets/img/missao.jpg" class="card-img-top" style="border-radius: 20px 20px 0 0 ;" alt="...">
         <div class="card-body">
           <h5 class="card-title">Missão</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -48,8 +36,8 @@
       </div>
     </div>
     <div class="col mb-4">
-      <div class="card" style="border:2px solid rgb(47, 131, 64);">
-        <img width="100%" height="100%" src="../../assets/img/visao.jpg" class="card-img-top" alt="...">
+      <div class="card" style="border-radius: 20px;">
+        <img width="100%" height="100%" src="../../assets/img/visao.jpg" class="card-img-top" style="border-radius: 20px 20px 0 0 ;" alt="...">
         <div class="card-body">
           <h5 class="card-title">Visão</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -57,8 +45,8 @@
       </div>
     </div>
     <div class="col mb-4">
-      <div class="card" style="border:2px solid rgb(47, 131, 64);">
-        <img width="100%" height="100%" src="../../assets/img/valores.jpg" class="card-img-top" alt="...">
+      <div class="card" style="border-radius: 20px;">
+        <img width="100%" height="100%" src="../../assets/img/valores.jpg" class="card-img-top" style="border-radius: 20px 20px 0 0 ;" alt="...">
         <div class="card-body">
           <h5 class="card-title">Valores</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -66,4 +54,6 @@
       </div>
     </div>
   </div>
-</div>
+
+</div><!--final fundo-->
+

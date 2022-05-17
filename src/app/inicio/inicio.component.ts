@@ -28,9 +28,13 @@ export class InicioComponent implements OnInit {
   tema: Tema = new Tema ()
   listTema: Tema []
   idTema: number
-  nomeTema: string
+
+  key = 'data' // criação de variáveis (key e reverse) para ordenação das postagens
+  reverse = true
 
   nome = environment.nome
+  foto = environment.foto// do último para o primeiro
+
 
   constructor(
     private router: Router,
@@ -76,23 +80,6 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  publicar(){
-    this.tema.id = this.idTema // o postagem.tema recebe o  idTema que vem do ngMOdel
-    this.postagem.tema =this.tema //o objeto postagem recebe este tema que é preenchido por this.id
-
-    this.user.id = this.idUser // pegando o id do user que está logado
-    this.postagem.usuario = this.user // peguei o usuário certo em cima e passo para a postagem
-
-    this.pService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
-      this.postagem = resp
-      this.alertas.showAlertSuccess('Postagem realizada com sucesso!') // PARA IMPLEMENTAR O ALERTA É SÓ ADICIONAR ESTA LINHA
-      this.postagem = new Postagem() //limpa os campos do modal
-      this.getAllPostagens() // após publicar a postagem ,já aparecer todas postagens atualizadas
-    })
-
-  }
-
-
   findByTituloPostagem(){
     if(this.tituloPost == ''){
       this.getAllPostagens()
@@ -103,14 +90,32 @@ export class InicioComponent implements OnInit {
     }
   }
 
-  findByNomeTema(){
-    if(this.nomeTema == ''){
-      this.getAllTemas()
-    } else {
-      this.tService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
-        this.listTema = resp
-      })
-    }
+  publicar(){
+    this.tema.id = this.idTema // o postagem.tema recebe o  idTema que vem do ngMOdel
+    this.postagem.tema =this.tema //o objeto postagem recebe este tema que é preenchido por this.id
+
+    this.user.id = this.idUser // pegando o id do user que está logado
+    this.postagem.usuario = this.user // peguei o usuário certo em cima e passo para a postagem
+
+    this.pService.postPostagem(this.postagem).subscribe({
+      next:
+      (resp: Postagem)=>{
+      this.postagem = resp
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')// PARA IMPLEMENTAR O ALERTA É SÓ ADICIONAR ESTA LINHA
+      this.postagem = new Postagem() //limpa os campos do modal
+      this.getAllPostagens() // após publicar a postagem ,já aparecer todas postagens atualizadas
+    },
+    error: (error) => {
+      if (error.status == 500) {
+        this.alertas.showAlertDanger('Postagem precisa de um tema');
+
+      }
+  }})
+
   }
+
+  quemsomos() {
+    this.router.navigate(['/quem-somos'])
+}
 
 }

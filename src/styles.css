@@ -4,4 +4,6 @@ body {
 html {
     scroll-behavior: smooth;
  }
-  
+a{
+      cursor: pointer;
+  }

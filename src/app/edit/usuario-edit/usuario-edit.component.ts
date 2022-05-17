@@ -18,7 +18,7 @@ export class UserEditComponent implements OnInit {
   tipoUsuario:string
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
     private alertas: AlertasService
@@ -51,6 +51,7 @@ export class UserEditComponent implements OnInit {
     if(this.user.senha != this.confirmaSenha){ //Comparação de senhas
       this.alertas.showAlertDanger('As senhas estão incorretas.')
     } else{
+      this.user.postagem = []
       this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
         this.user = resp
         
@@ -70,6 +71,7 @@ export class UserEditComponent implements OnInit {
   findByIdUser(id: number){
     this.authService.getByIdUser(id).subscribe((resp: Usuario)=>{
       this.user=resp
+      this.user.senha = ''
     })
 
   }

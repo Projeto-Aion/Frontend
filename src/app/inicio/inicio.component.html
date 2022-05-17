@@ -6,14 +6,14 @@
     <div class="m-3 d-flex flex-column align-items-start justify-content-start publicacoes">
       <h1 class="m-3 py-3 font-weight-bold">Publicações</h1>
       <div class="m-3 d-flex flex-row justify-content-start">
-  
+
         <a class="nova btn " data-toggle="modal" data-target="#novaPostagem"> Nova<span class="desktop"> postagem</span></a>
-  
+
       </div>
     </div>
   </div>
     <!--! Cabeçalho da Página -->
-  
+
     <!--? Barra de Pesquisa-->
       <div class="col-md-6 pl-2 pr-0 m-auto ">
         <div class="form-group ">
@@ -44,9 +44,9 @@
     </div>
   </div>
   <!--! Sidebar -->
-  
-  
-  
+
+
+
     <!--? Card de Postagem Estilizado (Todas as postagens)-->
     <div class="col-md-9 p-0">
     <div class="col-md-12 d-block mx-auto">
@@ -73,7 +73,7 @@
               <div class="row pl-2">
                 <p class="d-flex col-md-12 text-muted text-left">#{{postagem.tema.categoria}}</p>
               </div>
-  
+
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@
   </div>
   </div>
     <!--? Card de Postagem Estilizado (Todas as postagens)-->
-  
+
     <!--! Modal Criação de Postagem -->
   <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
       aria-hidden="true">
@@ -99,19 +99,19 @@
                   <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
                   placeholder="Digite o título">
                 </div>
-  
+
                 <div class="form-group">
                   <label for="texto"><i aria-hidden="true" class="fa fa-pencil"> Texto</i></label>
                       <textarea [(ngModel)]="postagem.descricao" class="form-control" name="texto" id="texto"
                           rows="3"></textarea>
                   </div>
-  
+
                   <div class="form-group">
                     <label for="imagem"><i aria-hidden="true" class="fa fa-picture-o"> Imagem</i></label>
                     <input [(ngModel)]="postagem.anexo" type="text" class="form-control" name="imagem" id="imagem"
                           placeholder="Cole a URL da imagem">
                   </div>
-  
+
                   <div class="form-group">
                     <label for="tema"><i aria-hidden="true" class="fa fa-hashtag"> Escolha um tema ou </i><a data-dismiss="modal" routerLink="/tema"> cadastre um
                         novo</a></label>
@@ -120,7 +120,7 @@
                       <option *ngFor="let item of listTema" value="{{item.id}}">{{item.categoria}}</option>
                     </select>
                   </div>
-  
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>

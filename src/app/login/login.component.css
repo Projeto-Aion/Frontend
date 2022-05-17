@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.form-group .form-control {
+  padding-left: 2.375rem;
+}
+
 .form-group .form-control-icon {
   position: absolute;
   z-index: 2;

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-quem-somos',
@@ -13,11 +12,8 @@ export class QuemSomosComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(){
-    if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
-      this.router.navigate(['/login'])
-    }
-
+  ngOnInit(): void{
+    
   }
 
 }

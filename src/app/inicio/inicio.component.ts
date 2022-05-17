@@ -20,6 +20,7 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPost: string
 
   user: Usuario = new Usuario()
   idUser = environment.id
@@ -29,8 +30,10 @@ export class InicioComponent implements OnInit {
   idTema: number
 
   key = 'data' // criação de variáveis (key e reverse) para ordenação das postagens
-  reserve = true // do último para o primeiro
+  reverse = true
 
+  nome = environment.nome
+  foto = environment.foto// do último para o primeiro
 
   constructor(
     private router: Router,
@@ -76,6 +79,16 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    } else {
+      this.pService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
+
   publicar(){
     this.tema.id = this.idTema // o postagem.tema recebe o  idTema que vem do ngMOdel
     this.postagem.tema =this.tema //o objeto postagem recebe este tema que é preenchido por this.id
@@ -83,12 +96,20 @@ export class InicioComponent implements OnInit {
     this.user.id = this.idUser // pegando o id do user que está logado
     this.postagem.usuario = this.user // peguei o usuário certo em cima e passo para a postagem
 
-    this.pService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
+    this.pService.postPostagem(this.postagem).subscribe({
+      next:
+      (resp: Postagem)=>{
       this.postagem = resp
-      this.alertas.showAlertSuccess('Postagem realizada com sucesso!') // PARA IMPLEMENTAR O ALERTA É SÓ ADICIONAR ESTA LINHA
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')// PARA IMPLEMENTAR O ALERTA É SÓ ADICIONAR ESTA LINHA
       this.postagem = new Postagem() //limpa os campos do modal
       this.getAllPostagens() // após publicar a postagem ,já aparecer todas postagens atualizadas
-    })
+    },
+    error: (error) => {
+      if (error.status == 500) {
+        this.alertas.showAlertDanger('Postagem precisa de um tema');
+
+      }
+  }})
 
   }
 

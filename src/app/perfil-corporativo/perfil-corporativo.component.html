@@ -1,7 +1,28 @@
-<div class="cointaner">
-  <div class="jumbotron">
-    <div href="" class="img-fluid">
+<div class="container-fluid perfil-fundo">
 
-    </div>
-  </div>
+<div class="topo">
+  <p routerLink="/inicio"><i class="fa fa-duotone fa-arrow-left"></i>
+  <span class="nome">{{nome}}</span></p>
 </div>
+
+<div class="imgfundo d-flex justify-content-center mt-2">
+  <img width="80%" height="20%" src="https://doo.com.br/admin/kcfinder/upload/images/1--Qual-a-difenca.png" alt="foto de capa">
+</div>
+
+<div class="foto-perfil d-flex justify-content-center">
+  <img class="img-perfil rounded-circle img-fluid" width="12%" height="12%" [src]="foto" alt="foto de perfil">
+</div>
+
+<div class="d-flex justify-content-end" style="margin-top: -10%;">
+<button class="button">{{tipo}}</button>
+</div>
+
+<div class="final">
+<p class="nome d-flex justify-content-center">{{nome}}</p>
+<p class="email d-flex justify-content-center">usuarioteste@email.com{{usuario}}</p>
+<p class="descricao d-flex justify-content-center">eu sou um estudante muito esforçado.</p>
+<p class="descricao d-flex justify-content-center">São Paulo/São Paulo</p>
+<p class="descricao d-flex justify-content-center">{{telefone}}</p>
+</div>
+
+</div> <!-- FIM DA DIV PRINCIPAL -->

@@ -11,26 +11,29 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { TemaComponent } from './tema/tema.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { PerfilPadraoComponent } from './perfil-padrao/perfil-padrao.component';
+import { PerfilCorporativoComponent } from './perfil-corporativo/perfil-corporativo.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'login', pathMatch:'full'},
   {path:'login', component: LoginComponent},
   {path:'cadastrar', component: CadastrarComponent},
   {path: 'inicio', component: InicioComponent},
+  {path: 'menu', component: MenuComponent},
   {path:'rodape', component: RodapeComponent},
   {path:'quem-somos', component: QuemSomosComponent},
 
-  {path: 'inicio', component: InicioComponent},
   {path: 'usuario-edit/:id', component: UserEditComponent},
 
   {path:'tema', component: TemaComponent},
-  {path:'inicio', component: InicioComponent},
   {path:'temaEdit/:id', component: TemaEditComponent},
   {path:'temaDelete/:id', component: TemaDeleteComponent},
   {path:'postagemDelete/:id', component: PostagemDeleteComponent},
   {path:'postagemEdit/:id', component: PostagemEditComponent},
-];
-
+  {path:'perfil-padrao/:id', component: PerfilPadraoComponent},
+  {path:'perfil-corporativo/:id', component: PerfilCorporativoComponent},
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

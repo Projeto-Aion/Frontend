@@ -1,0 +1,103 @@
+i {
+  font-size: 1.5rem;
+}
+
+.nome {
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 1%;
+}
+
+.foto-perfil {
+  margin-top: -6%;
+  border-radius: 100%;
+}
+
+.perfil-fundo {
+  background-color: cadetblue;
+}
+
+.img-perfil {
+  border-top: -30%;
+  border: 3px solid cadetblue;
+}
+
+/* ***** botão perfil ***** */
+/* From uiverse.io by @nikk7007 */
+.button {
+  --color: #d3d3d3;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 600;
+  font-size: 20px;
+  border: 1.3px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  margin-right: 10%;
+  padding: 3px 9px;
+ }
+
+ .button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: aquamarine;
+  transition: 1s ease;
+ }
+
+ .button::before {
+  top: -1em;
+  left: -1em;
+ }
+
+ .button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+ }
+
+ .button:hover::before, .button:hover::after {
+  height: 5%;
+  width: 5%;
+ }
+
+ .button:hover {
+  color: rgb(8, 124, 163);
+ }
+
+ .button:active {
+  filter: brightness(.8);
+ }
+
+ /* ***** final ***** */
+
+ .final {
+   margin-top: 11%;
+ }
+ .nome {
+   font-size: 32px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: #ffffff;
+ }
+
+ .email {
+   font-size: 24px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: #ffffff;
+ }
+
+ .descricao {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff;
+ }

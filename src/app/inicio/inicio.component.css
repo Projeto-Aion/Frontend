@@ -10,3 +10,7 @@ pre{
 h4{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.butao:hover {
+  color: aquamarine ;
+}

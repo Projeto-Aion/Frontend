@@ -1,12 +1,15 @@
 <!--? Barra de Pesquisas  -->
-<div class="mt-4">
+<div class="m-4">
   <div class="col-md-6 pl-2 pr-0 m-auto">
-    <div class="form-group ">
+    <div class="form-group">
+      <span class="fa fa-search form-control-icon"></span>
       <input type="text" class="form-control  " id="titulo" placeholder="Digite um titulo para pesquisar"
         [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
     </div>
   </div>
 </div>
+
+
 <!--? Barra de Pesquisas  -->
 
 <!--! Sidebar -->
@@ -28,13 +31,13 @@
           <div class="row d-flex justify-content-center mt-3">
             <button class="w-100 text-left btn btn-violeta text-cg-50 mx-3 my-1 px-3" data-toggle="modal"
               data-target="#novaPostagem">
-              <i class="fa fa-plus-square-o text-cg-50 pr-2 " aria-hidden="true"></i> Novo post
+              <i class="fa fa-plus-square-o text-cg-50 pr-2 butao" aria-hidden="true"></i> Novo post
             </button>
             <button class="w-100 text-left btn btn-violeta text-cg-50 mx-3 my-1 px-3" routerLink="/tema">
-              <i class="fa fa-plus-square-o text-cg-50 pr-2" aria-hidden="true"></i> Cadastrar tema
+              <i class="fa fa-plus-square-o text-cg-50 pr-2 butao" aria-hidden="true"></i> Cadastrar tema
             </button>
             <button class="w-100 text-left btn btn-cg-200 text-cg-500 mx-3 my-1 px-3" routerLink="/minhas-postagens">
-              <i class="fa fa-user-o pr-2 text-violeta" aria-hidden="true"></i> Meu Perfil
+              <i class="fa fa-user-o pr-2 text-violeta butao" aria-hidden="true"></i> Meu Perfil
             </button>
           </div>
         </div>
@@ -116,8 +119,7 @@
 
         <div class="form-group">
           <label for="tema"><i aria-hidden="true" class="fa fa-hashtag"> Escolha um tema ou </i><a data-dismiss="modal"
-              routerLink="/tema"> cadastre um
-              novo</a></label>
+              routerLink="/tema"> cadastre um novo</a></label>
           <select class="form-control" name="tema" id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
             <option *ngFor="let item of listTema" value="{{item.id}}">{{item.categoria}}</option>
           </select>

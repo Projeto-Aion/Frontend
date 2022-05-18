@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
+
 @Component({
   selector: 'app-perfil-corporativo',
   templateUrl: './perfil-corporativo.component.html',
@@ -14,9 +15,11 @@ export class PerfilCorporativoComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
+    if(environment.token == '') {
+          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
       this.router.navigate(['/login'])
     }
+
   }
 
 }

@@ -1,60 +1,33 @@
-
+<!--? Barra de Pesquisas  -->
 <div class="mt-4">
-
   <div class="col-md-6 pl-2 pr-0 m-auto">
     <div class="form-group ">
-      <input type="text" class="form-control  " id="titulo" placeholder="Digite um titulo para pesquisar" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+      <input type="text" class="form-control  " id="titulo" placeholder="Digite um titulo para pesquisar"
+        [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
     </div>
   </div>
 </div>
+<!--? Barra de Pesquisas  -->
 
-<div class="container-fluid p-0 fundo justify-content-center">
-
-    <div class="row">
-
-
-
-    <!--! Sidebar -->
-
-    <!-- <div class="row p-0">
-    <div class="col-md-3 d-flex justify-content-center">
-      <div class="card-collum m-4 row cardo" style="width: 18rem;">
-        <img [src]="foto" onerror="this.src =src='../../assets/img/UserDefault.png'" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title font-weight-bold">{{nome}}</h5>
-          <div class="btn-group-vertical">
-            <a (click)='findByIdUser()' class="botaolateral btn mb-3 w-100 active " id="nav-minhasPostagens-tab"
-            data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
-            aria-selected="false">Editar Perfil</a>
-            <a class="botaolateral btn mb-3 w-100" data-toggle="modal" data-target="#novaPostagem">Postar</a>
-            <a (click)='findByIdUser()' class="botaolateral btn mb-3 w-100 " id="nav-postagemTema-tab"
-            data-toggle="tab" routerLink="/tema" role="tab" aria-controls="nav-postagemTema"
-            aria-selected="false">Temas</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--! Sidebar -->
-
-
-  <div class="container-fluid">
+<!--! Sidebar -->
+<div class="container-fluid">
 
   <div class="container">
 
-
-    <div class="row my-4">
+    <div class="row my-4 fundo">
 
       <div class="col-md-3 fixed-item">
         <div class="div card d-flex align-content-center p-3">
           <div class="row d-flex justify-content-center mb-3">
-            <img class="rounded-circle img-fluid b-img" style="width: 11rem;" src="{{foto}}" onerror="this.src =src='../../assets/img/UserDefault.png'">
+            <img class="rounded-circle img-fluid b-img" style="width: 11rem;" src="{{foto}}"
+              onerror="this.src =src='../../assets/img/UserDefault.png'">
           </div>
           <div class="row d-flex justify-content-center">
             <h5 class="text-center">{{nome}}</h5>
           </div>
           <div class="row d-flex justify-content-center mt-3">
-            <button class="w-100 text-left btn btn-violeta text-cg-50 mx-3 my-1 px-3" data-toggle="modal" data-target="#novaPostagem">
+            <button class="w-100 text-left btn btn-violeta text-cg-50 mx-3 my-1 px-3" data-toggle="modal"
+              data-target="#novaPostagem">
               <i class="fa fa-plus-square-o text-cg-50 pr-2 " aria-hidden="true"></i> Novo post
             </button>
             <button class="w-100 text-left btn btn-violeta text-cg-50 mx-3 my-1 px-3" routerLink="/tema">
@@ -67,90 +40,96 @@
         </div>
       </div>
 
-       <!--! Sidebar -->
+      <!--! Sidebar -->
 
 
-    <!--? Card de Postagem Estilizado (Todas as postagens)-->
-    <div class="col-md-9 p-0">
-    <div class="col-md-12 d-block mx-auto">
-      <div class="card shadow rounded border col-md-10 d-block mx-auto text-center px-0 pb-1 pt-0" *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
-        <div class="row d-flex justify-content-center mt-2 pb-3">
-          <div class="col-md-1 mt-1 pr-0 "><img src="{{postagem.usuario.foto}}" onerror="this.src = src='../../assets/img/UserDefault.png'" class="rounded-circle" width="50px" alt=""></div>
-            <div class="col-md-11 pl-3">
-              <h4 class="d-flex mt-1 m-0">{{postagem.usuario.nome}}</h4>
-              <small class="d-flex ml-0 mt-1 text-muted align-items-center"><i class="fa fa-calendar pr-1"></i>{{postagem.data | date:'dd/MM/yyyy'}} <i class="fa fa-clock-o pr-1 pl-2"></i>{{postagem.data | date: 'HH:mm'}}</small>
-            </div>
-          </div>
-          <div div class="row p-0 m-0 w-100">
-            <h4 class="card-title w-100 mt-3"><strong>{{postagem.titulo}}</strong></h4>
-          </div>
-          <div class="row card-body justify-content-center mt-2 py-0">
-            <div class="col-md-12 pb-1 px-0 ">
-              <div class="row w-100 ml-1">
-                <pre class="quebra mr-4 mb-1 text-left font-weight-normal">{{postagem.descricao}}</pre>
+      <!--? Card de Postagem Estilizado (Todas as postagens)-->
+      <div class="col-md-9 p-0">
+        <div class="col-md-12 d-block mx-auto">
+          <div class="card shadow rounded border col-md-10 d-block mx-auto text-center px-0 pb-1 pt-0"
+            *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
+            <div class="row d-flex justify-content-center mt-2 pb-2 p-3">
+              <div class="col-md-1 mt-1 pr-0 "><img src="{{postagem.usuario.foto}}"
+                  onerror="this.src = src='../../assets/img/UserDefault.png'" class="rounded-circle" width="50"
+                  alt=""></div>
+              <div class="col-md-11 pl-3">
+                <h4 class="d-flex mt-1 m-0">{{postagem.usuario.nome}}</h4>
+                <small class="d-flex ml-0 mt-1 text-muted align-items-center"><i
+                    class="fa fa-calendar pr-1"></i>{{postagem.data | date:'dd/MM/yyyy'}} <i
+                    class="fa fa-clock-o pr-1 pl-2"></i>{{postagem.data | date: 'HH:mm'}}</small>
               </div>
             </div>
-          </div>
-          <div class="row justify-content-center"><img src="{{postagem.anexo}}" class="img-fluid col-md-12"></div>
+            <div div class="row p-0 m-0 w-100">
+              <h4 class="card-title w-100 mt-3"><strong>{{postagem.titulo}}</strong></h4>
+            </div>
+            <div class="row card-body justify-content-center mt-2 py-0">
+              <div class="col-md-12 pb-1 px-0 ">
+                <div class="row w-100 ml-1">
+                  <pre class="quebra mr-4 mb-1 text-left font-weight-normal">{{postagem.descricao}}</pre>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center"><img src="{{postagem.anexo}}" class="img-fluid col-md-12"></div>
             <div class="row col-md-11 mt-1 justify-content-left">
               <div class="row pl-2">
                 <p class="d-flex col-md-12 text-muted text-left">#{{postagem.tema.categoria}}</p>
               </div>
 
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
     <!--? Card de Postagem Estilizado (Todas as postagens)-->
 
-    <!--! Modal Criação de Postagem -->
-  <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title">>Nova postagem</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="titulo"><i class="fa fa-commenting-o" aria-hidden="true"> Título</i></label>
-                  <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
-                  placeholder="Digite o título">
-                </div>
-
-                <div class="form-group">
-                  <label for="texto"><i aria-hidden="true" class="fa fa-pencil"> Texto</i></label>
-                      <textarea [(ngModel)]="postagem.descricao" class="form-control" name="texto" id="texto"
-                          rows="3"></textarea>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="imagem"><i aria-hidden="true" class="fa fa-picture-o"> Imagem</i></label>
-                    <input [(ngModel)]="postagem.anexo" type="text" class="form-control" name="imagem" id="imagem"
-                          placeholder="Cole a URL da imagem">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="tema"><i aria-hidden="true" class="fa fa-hashtag"> Escolha um tema ou </i><a data-dismiss="modal" routerLink="/tema"> cadastre um
-                        novo</a></label>
-                      <select class="form-control" name="tema" id="tema" [(ngModel)]="idTema"
-                      (change)="findByIdTema()">
-                      <option *ngFor="let item of listTema" value="{{item.id}}">{{item.categoria}}</option>
-                    </select>
-                  </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outline-success" (click)="publicar()"
-                      data-dismiss="modal">Publicar</button>
-              </div>
-          </div>
-      </div>
   </div>
-    <!--! Modal Criação de Postagem -->
+</div>
 
+<!--! Modal Criação de Postagem -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">>Nova postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo"><i class="fa fa-commenting-o" aria-hidden="true"> Título</i></label>
+          <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
+            placeholder="Digite o título">
+        </div>
+
+        <div class="form-group">
+          <label for="texto"><i aria-hidden="true" class="fa fa-pencil"> Texto</i></label>
+          <textarea [(ngModel)]="postagem.descricao" class="form-control" name="texto" id="texto" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imagem"><i aria-hidden="true" class="fa fa-picture-o"> Imagem</i></label>
+          <input [(ngModel)]="postagem.anexo" type="text" class="form-control" name="imagem" id="imagem"
+            placeholder="Cole a URL da imagem">
+        </div>
+
+        <div class="form-group">
+          <label for="tema"><i aria-hidden="true" class="fa fa-hashtag"> Escolha um tema ou </i><a data-dismiss="modal"
+              routerLink="/tema"> cadastre um
+              novo</a></label>
+          <select class="form-control" name="tema" id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
+            <option *ngFor="let item of listTema" value="{{item.id}}">{{item.categoria}}</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-outline-success" (click)="publicar()"
+          data-dismiss="modal">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--! Modal Criação de Postagem -->

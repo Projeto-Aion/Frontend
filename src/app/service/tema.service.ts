@@ -31,6 +31,10 @@ export class TemaService {
     return this.http.get<Tema>(`https://projeto-aion.herokuapp.com/temas/${id}`, this.token)
   }
 
+  getByNomeTema(categoria: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://projeto-aion.herokuapp.com/temas/categoria/${categoria}`, this.token)
+  }
+
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://projeto-aion.herokuapp.com/temas', tema, this.token)
   }

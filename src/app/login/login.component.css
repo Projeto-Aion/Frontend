@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.form-group .form-control {
+  padding-left: 2.375rem;
+}
+
 .form-group .form-control-icon {
   position: absolute;
   z-index: 2;
@@ -24,4 +28,15 @@
 
 .br-20{
   border-radius: 50px;
+}
+
+social-network {
+  list-style: none;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0;
+  padding: 0.5vw;
 }

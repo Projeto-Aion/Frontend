@@ -52,9 +52,9 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule, // Para funcionamento do alerta
     ModalModule.forRoot(), // Para funcionamento do alerta
-    OrderModule //Ordernação - order-by
+    OrderModule, //Ordernação - order-by
   ],
   providers: [{
     provide: LocationStrategy,

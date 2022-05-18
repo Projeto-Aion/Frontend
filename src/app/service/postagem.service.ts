@@ -43,4 +43,8 @@ deletePostagem(id: number) {
   return this.http.delete(`https://projeto-aion.herokuapp.com/postagens/${id}`, this.token)
 }
 
+getByTituloPostagem(titulo: string): Observable<Postagem[]>{
+  return this.http.get<Postagem[]>(`https://projeto-aion.herokuapp.com/postagens/titulo/${titulo}`, this.token)
+}
+
 }

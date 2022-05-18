@@ -1,7 +1,3 @@
-i {
-  font-size: 1.9rem;
-}
-
 .nome {
   font-size: 22px;
   font-weight: 600;
@@ -9,7 +5,7 @@ i {
 }
 
 .foto-perfil {
-  margin-top: -13%;
+  margin-top: -6%;
 }
 
 .perfil-fundo {
@@ -18,9 +14,8 @@ i {
 }
 
 .img-perfil {
-  border-top: -45%;
   border: 3px solid #D4E8FF;
-  width: 13%;
+  width: 15%;
 }
 
 /* ***** botão perfil ***** */
@@ -44,7 +39,7 @@ i {
  }
 
  .btt {
-   margin-top: -9.8%;
+   margin-top: -6%;
  }
 
  .button::before, .button::after {
@@ -86,7 +81,7 @@ i {
  /* ***** final ***** */
 
  .final {
-   margin-top: 10%;
+   margin-top: 6%;
  }
  .nome {
    font-size: 32px;

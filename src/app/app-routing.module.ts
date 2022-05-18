@@ -32,7 +32,6 @@ const routes: Routes = [
   {path:'postagemDelete/:id', component: PostagemDeleteComponent},
   {path:'postagemEdit/:id', component: PostagemEditComponent},
   {path:'perfil-padrao/:id', component: PerfilPadraoComponent},
-  {path:'perfil-corporativo/:id', component: PerfilCorporativoComponent},
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

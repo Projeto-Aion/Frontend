@@ -44,9 +44,9 @@ export class PerfilPadraoComponent implements OnInit {
     if(environment.token == '') {          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
       this.router.navigate(['/login'])
     }
+    this.getAllTemas()
     this.getAllPostagens()
     this.findByIdUser()
-    this.getAllTemas()
   }
 
   getAllPostagens(){

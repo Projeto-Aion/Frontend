@@ -25,13 +25,13 @@
 
 
   <!--? Card de Postagem Estilizado (Todas as postagens)-->
-  <div class="col-md-9 p-0">
+  <div class="d-block mx-auto col-md-9 p-0">
     <div class="col-md-12 d-block mx-auto">
       <div class="card shadow rounded border col-md-10 d-block mx-auto my-3 text-center px-0 pb-1 pt-0" *ngFor='let postagem of user.postagem'>
         <div class="row d-flex justify-content-center m-0 pt-3">
-          <div class="col-md-1 mt-1 pr-0 "><img src="{{postagem.usuario.foto}}" onerror="this.src = src='../../assets/img/UserDefault.png'" class="rounded-circle" width="50px" alt=""></div>
+          <div class="col-md-1 mt-1 pr-0 "><img src="{{foto}}" onerror="this.src = src='../../assets/img/UserDefault.png'" class="rounded-circle" width="50px" alt=""></div>
             <div class="col-md-11 pl-3">
-              <h4 class="d-flex mt-1 m-0">{{postagem.usuario.nome}}</h4>
+              <h4 class="d-flex mt-1 m-0">{{nome}}</h4>
               <small class="d-flex ml-0 mt-1 text-muted align-items-center"><i class="fa fa-calendar pr-1"></i>{{postagem.data | date:'dd/MM/yyyy'}} <i class="fa fa-clock-o pr-1 pl-2"></i>{{postagem.data | date: 'HH:mm'}}</small>
             </div>
           </div>
@@ -48,10 +48,13 @@
           <div class="row justify-content-center"><img src="{{postagem.anexo}}" class="img-fluid col-md-12"></div>
             <div class="row col-md-11 mt-1 justify-content-left">
               <div class="row pl-2">
+                <div class="colmr-auto  "></div>
                 <p class="d-flex col-md-12 text-muted text-left">#{{postagem.tema.categoria}}</p>
               </div>
-              <a [routerLink]="['/postagemEdit', postagem.id]" class="text-info mr-3" href="">Editar</a>
-              <a [routerLink]="['/postagemDelete', postagem.id]" class="text-danger" href="">Apagar</a>
+
+              <p ><a [routerLink]="['/postagemEdit', postagem.id]" class="text-info mr-3" href="">Editar</a>
+              <a [routerLink]="['/postagemDelete', postagem.id]" class="text-danger" href="">Apagar</a></p>
+
         </div>
       </div>
     </div>

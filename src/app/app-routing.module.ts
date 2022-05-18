@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'', redirectTo: 'login', pathMatch:'full'},
   {path:'login', component: LoginComponent},
   {path:'cadastrar', component: CadastrarComponent},
-  {path: 'inicio', component: InicioComponent},
+  {path:'inicio', component: InicioComponent},
   {path:'rodape', component: RodapeComponent},
   {path:'quem-somos', component: QuemSomosComponent},
 
@@ -29,6 +29,7 @@ const routes: Routes = [
   {path:'temaDelete/:id', component: TemaDeleteComponent},
   {path:'postagemDelete/:id', component: PostagemDeleteComponent},
   {path:'postagemEdit/:id', component: PostagemEditComponent},
+
 ];
 
 @NgModule({

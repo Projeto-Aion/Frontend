@@ -49,8 +49,8 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.authService.refreshToken()
-    this.getAllTemas()
     this.getAllPostagens()
+    this.getAllTemas()
   }
 
 

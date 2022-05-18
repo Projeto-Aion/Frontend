@@ -1,9 +1,63 @@
-<div class="container-fluid">
-  <div class="row d-flex align-items-center">
+<div class="container-fluid perfil-fundo p-0">
 
+  <div class="imgfundo d-flex justify-content-center">
+    <img width="100%" height="240" src="https://www.ambarflores.com/adlinaf3/PublicTempStorage/multimedia/banner-plantas-de-interior_d1597f271dbc4aecaf4ff3ef6c2900ee.png" alt="foto de capa">
   </div>
 
-  <div class="row">
+<!--! Cuidado ancora do fundo (NÃO APAGAR) -->
+  <i style="font-size: 2.6em;
+  display: flex;
+  justify-content: end;
+  margin-top: -13%;
+  margin-right: 0.6em;"></i>
+<!--! Cuidado ancora do fundo (NÃO APAGAR) -->
+
+  <div class="foto-perfil d-flex justify-content-center">
+    <img class="img-perfil rounded-circle img-fluid" [src]="foto" onerror="this.src =src='../../assets/img/UserDefault.png'" alt="foto de perfil">
+  </div>
+
+  <div class="final container mt-3 p-0">
+  <p class="nome d-flex justify-content-center">{{nome}}</p>
+  <p class="email d-flex justify-content-center">usuarioteste@email.com{{usuario}}</p>
+  <p class="descricao d-flex justify-content-center">descrição: eu sou um estudante muito esforçado.</p>
+  </div>
+
+
+
+  <!--? Card de Postagem Estilizado (Todas as postagens)-->
+  <div class="col-md-9 p-0">
+    <div class="col-md-12 d-block mx-auto">
+      <div class="card shadow rounded border col-md-10 d-block mx-auto my-3 text-center px-0 pb-1 pt-0" *ngFor='let postagem of user.postagem'>
+        <div class="row d-flex justify-content-center m-0 pt-3">
+          <div class="col-md-1 mt-1 pr-0 "><img src="{{postagem.usuario.foto}}" onerror="this.src = src='../../assets/img/UserDefault.png'" class="rounded-circle" width="50px" alt=""></div>
+            <div class="col-md-11 pl-3">
+              <h4 class="d-flex mt-1 m-0">{{postagem.usuario.nome}}</h4>
+              <small class="d-flex ml-0 mt-1 text-muted align-items-center"><i class="fa fa-calendar pr-1"></i>{{postagem.data | date:'dd/MM/yyyy'}} <i class="fa fa-clock-o pr-1 pl-2"></i>{{postagem.data | date: 'HH:mm'}}</small>
+            </div>
+          </div>
+          <div div class="row p-0 m-0 w-100">
+            <h4 class="card-title w-100 mt-3"><strong>{{postagem.titulo}}</strong></h4>
+          </div>
+          <div class="row card-body justify-content-center mt-2 py-0">
+            <div class="col-md-12 pb-1 px-0 ">
+              <div class="row w-100 ml-1">
+                <pre class="quebra mr-4 mb-1 text-left font-weight-normal">{{postagem.descricao}}</pre>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center"><img src="{{postagem.anexo}}" class="img-fluid col-md-12"></div>
+            <div class="row col-md-11 mt-1 justify-content-left">
+              <div class="row pl-2">
+                <p class="d-flex col-md-12 text-muted text-left">#{{postagem.tema.categoria}}</p>
+              </div>
+              <a [routerLink]="['/postagemEdit', postagem.id]" class="text-info mr-3" href="">Editar</a>
+              <a [routerLink]="['/postagemDelete', postagem.id]" class="text-danger" href="">Apagar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--? Card de Postagem Estilizado (Todas as postagens)-->
+
 
   </div>
-</div>
+<!-- FIM DA DIV PRINCIPAL -->

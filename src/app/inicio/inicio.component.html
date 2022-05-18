@@ -6,9 +6,6 @@
     <div class="m-3 d-flex flex-column align-items-start justify-content-start publicacoes">
       <h1 class="m-3 py-3 font-weight-bold">Publicações</h1>
       <div class="m-3 d-flex flex-row justify-content-start">
-
-        <a class="nova btn " data-toggle="modal" data-target="#novaPostagem"> Nova<span class="desktop"> postagem</span></a>
-
       </div>
     </div>
   </div>
@@ -33,11 +30,9 @@
             <a (click)='findByIdUser()' class="botaolateral btn mb-3 w-100 active " id="nav-minhasPostagens-tab"
             data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
             aria-selected="false">Perfil</a>
-            <a (click)='findByIdUser()' class="botaolateral btn mb-3 w-100 " id="nav-todasPostagens-tab"
-            data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens"
-            aria-selected="false">Feed</a>
+            <a class="botaolateral btn mb-3 w-100" data-toggle="modal" data-target="#novaPostagem">Postar</a>
             <a (click)='findByIdUser()' class="botaolateral btn mb-3 w-100 " id="nav-postagemTema-tab"
-            data-toggle="tab" href="#postagemTema" role="tab" aria-controls="nav-postagemTema"
+            data-toggle="tab" routerLink="/tema" role="tab" aria-controls="nav-postagemTema"
             aria-selected="false">Temas</a>
         </div>
       </div>

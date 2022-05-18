@@ -9,12 +9,6 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PerfilCorporativoComponent implements OnInit {
 
-  nome = environment.nome
-  foto = environment.foto
-  usuario = environment.usuario
-  telefone = environment.telefone
-  tipo = environment.tipo
-
   constructor(
     private router: Router
   ) { }

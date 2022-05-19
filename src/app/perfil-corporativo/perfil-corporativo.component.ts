@@ -12,10 +12,6 @@ export class PerfilCorporativoComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-    if(environment.token == '') {
-          //SE EU DER UM ATUALIZAR TEM QUE VOLTAR PRO LOGIN
-      this.router.navigate(['/login'])
+
     }
   }
-
-}

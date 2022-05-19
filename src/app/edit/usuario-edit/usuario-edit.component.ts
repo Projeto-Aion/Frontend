@@ -56,14 +56,14 @@ export class UserEditComponent implements OnInit {
       this.user.postagem = []
       this.authService.atualizar(this.user).subscribe((resp: Usuario) => {
         this.user = resp
-        
+
         /*this.router.navigate(['/inicio'])*/
         this.alertas.showAlertSuccess('Usuário atualizado com sucesso, faça o login novamente')
         environment.token = ''
         environment.nome = ''
         environment.foto = ''
         environment.id = 0
-        this.router.navigate(['/login'])
+        this.router.navigate(['/inicio'])
 
       })
     }

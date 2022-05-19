@@ -1,3 +1,4 @@
+
 export const environment = {
   production: true,
     nome: '',
@@ -7,5 +8,5 @@ export const environment = {
     telefone: '',
     usuario: '',
     foto: '',
-    tipo: ''
+    tipo: '',
   };

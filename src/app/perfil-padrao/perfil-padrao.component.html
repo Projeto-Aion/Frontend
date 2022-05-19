@@ -16,11 +16,11 @@
     <img class="img-perfil rounded-circle img-fluid" [src]="foto" onerror="this.src =src='../../assets/img/UserDefault.png'" alt="foto de perfil">
   </div>
 
-  <div class="final container mt-3 p-0">
-  <p class="nome d-flex justify-content-center">{{nome}}</p>
-  <p class="email d-flex justify-content-center">usuarioteste@email.com{{usuario}}</p>
-  <p class="descricao d-flex justify-content-center">descrição: eu sou um estudante muito esforçado.</p>
-  </div>
+  <div class="final container mt-3 p-0 ">
+    <p class="nome d-flex justify-content-center align-items-center">{{nome}} <a [routerLink]="['/usuario-edit', idUser]">
+      <p class="tamanho m-0 p-0 align-items-center"><i class="ml-2 mt-2 fa fa-pencil-square-o align-items-center " aria-hidden="true"></i></p>
+    </a></p>
+    </div>
 
 
 
@@ -52,8 +52,10 @@
                 <p class="d-flex col-md-12 text-muted text-left">#{{postagem.tema.categoria}}</p>
               </div>
 
-              <p ><a [routerLink]="['/postagemEdit', postagem.id]" class="text-info mr-3" href="">Editar</a>
-              <a [routerLink]="['/postagemDelete', postagem.id]" class="text-danger" href="">Apagar</a></p>
+              <div class="nav-item pl-3 ml-auto list-inline-item d-flex align-items-center">
+                <a [routerLink]="['/postagemEdit', postagem.id]" class="text-info mr-3" href="">Editar</a>
+                <a [routerLink]="['/postagemDelete', postagem.id]" class="text-danger" href="">Apagar</a>
+              </div>
 
         </div>
       </div>

@@ -47,6 +47,8 @@ export class PerfilPadraoComponent implements OnInit {
     this.getAllTemas()
     this.getAllPostagens()
     this.findByIdUser()
+    this.authService.refreshToken()
+
   }
 
   getAllPostagens(){
